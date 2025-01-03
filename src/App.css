@@ -1,0 +1,280 @@
+/* Global Styles */
+
+:root {
+  /* --main-bg: #000316;
+  --sec-col: #7a00ff;
+  
+  background-color: var(--main-bg); */
+  color: white;
+  font-size: 16px;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+p {
+  font-size: 1rem;
+  color: #bbbbbb;
+}
+.pad {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.box {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: 50px auto;
+  scroll-margin-top: 100px;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: #7a00ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #5200cc;
+  transform: translateY(-2px);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #1a003e, #0d022d);
+  color: #ffffff;
+  border-bottom: 5px solid #7a00ff;
+}
+
+.header h1 {
+  color: #bbbbbb;
+  margin-bottom: 10px;
+}
+
+.header h2 {
+  font-size: 4rem;
+  color: #ffffff;
+}
+
+.header .btn-primary {
+  margin-top: 30px;
+}
+
+/* About Me */
+.about-me {
+  padding: 100px 20px;
+  background-color: #1a003e;
+  color: #ffffff;
+  text-align: center;
+}
+
+.about-me h3 {
+  color: #7a00ff;
+  margin-bottom: 40px;
+}
+
+.about-me .about-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.about-me .card {
+  background: #2b024e;
+  padding: 30px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  text-align: left;
+}
+
+.about-me .card p {
+  color: #bbbbbb;
+}
+
+/* Services */
+.my-services {
+  padding: 100px 20px;
+  background-color: #0d022d;
+  color: #ffffff;
+}
+
+.my-services h3 {
+  color: #7a00ff;
+}
+
+.my-services .services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.my-services .service-card {
+  background: #1a003e;
+  border: 1px solid #7a00ff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.my-services .service-card:hover {
+  transform: translateY(-10px);
+}
+
+.my-services .service-card h4 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.my-services .service-card p {
+  color: #bbbbbb;
+  font-size: 0.9rem;
+}
+
+/* Workflow */
+.my-workflow {
+  padding: 100px 20px;
+  background-color: #1a003e;
+  color: #ffffff;
+}
+
+.my-workflow h3 {
+  color: #7a00ff;
+}
+
+.my-workflow .workflow-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.my-workflow .workflow-card {
+  background: #2b024e;
+  width: 250px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.my-workflow .workflow-card h4 {
+  color: #ffffff;
+}
+
+.my-workflow .workflow-card p {
+  color: #bbbbbb;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Projects */
+.my-recent-projects {
+  padding: 100px 20px;
+  background-color: #0d022d;
+  color: #ffffff;
+  text-align: center;
+}
+
+.my-recent-projects h3 {
+  color: #7a00ff;
+}
+
+.my-recent-projects .projects-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.my-recent-projects .project-card {
+  background: #1a003e;
+  border: 1px solid #7a00ff;
+  border-radius: 10px;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.my-recent-projects .project-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Technologies */
+.technologies {
+  padding: 100px 20px;
+  background-color: #1a003e;
+  color: #ffffff;
+  text-align: center;
+}
+
+.technologies h3 {
+  color: #7a00ff;
+}
+
+.technologies .tech-logos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.technologies .tech-logos img {
+  height: 50px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.technologies .tech-logos img:hover {
+  transform: scale(1.1);
+}
+
+/* Call to Action */
+.call-to-action {
+  padding: 100px 20px;
+  background-color: #0d022d;
+  color: #ffffff;
+  text-align: center;
+}
+
+.call-to-action h3 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.call-to-action .btn-primary {
+  margin-top: 20px;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .placeholder {
+    width: auto;
+    height: 100%;
+  }
+
+  .pad {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
