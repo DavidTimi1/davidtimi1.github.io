@@ -1,12 +1,13 @@
 /* Global Styles */
 
 :root {
-  /* --main-bg: #000316;
+  --main-bg: #000316;
   --sec-col: #7a00ff;
+  --tert-col: #5200cc;
   
-  background-color: var(--main-bg); */
+  background-color: var(--main-bg);
   color: white;
-  font-size: 16px;
+  font-size: 17px;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -14,6 +15,14 @@
 }
 
 
+.img-box > img {
+  object-fit: cover;
+  object-position: center;
+}
+
+hr {
+  border-color: #00000050;
+}
 
 p {
   font-size: 1rem;
@@ -36,53 +45,20 @@ p {
   background-color: #7a00ff;
   color: #ffffff;
   border: none;
-  border-radius: 30px;
-  padding: 15px 30px;
+  border-radius: 20px;
+  padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  margin-top: 20px;
+
+  a& {
+    display: inline-block;
+  }
 }
 
 .btn-primary:hover {
   background-color: #5200cc;
   transform: translateY(-2px);
-}
-
-/* Header */
-.header {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #1a003e, #0d022d);
-  color: #ffffff;
-  border-bottom: 5px solid #7a00ff;
-}
-
-.header h1 {
-  color: #bbbbbb;
-  margin-bottom: 10px;
-}
-
-.header h2 {
-  font-size: 4rem;
-  color: #ffffff;
-}
-
-.header .btn-primary {
-  margin-top: 30px;
-}
-
-/* About Me */
-.about-me {
-  padding: 100px 20px;
-  background-color: #1a003e;
-  color: #ffffff;
-  text-align: center;
-}
-
-.about-me h3 {
-  color: #7a00ff;
-  margin-bottom: 40px;
 }
 
 .about-me .about-cards {
