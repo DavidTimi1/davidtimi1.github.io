@@ -1,0 +1,81 @@
+.home {
+    height: 82.5vh;
+
+    .brand {
+        background: linear-gradient(135deg, var(--tert-col) 10%, var(--sec-col), pink);
+        font-size: 200%;
+        font-weight: 800;
+        animation: gradient-anime 2s ease-in-out both alternate-reverse infinite;
+        background-position: 0 50%;
+        background-clip: text;
+        background-size: 200% 200%;
+        color: transparent;
+    }
+
+    .socials-list {
+    
+        &::after, &::before {
+            content: "";
+            background-color: var(--sec-col);
+        }
+    }
+    
+    @media screen and (min-width: 768px) {
+        .intro-txt {
+            margin-left: 50px;
+        }
+
+        .socials-list {
+            flex-direction: column;
+            bottom: 0;
+
+            &::after {
+                height: 100px;
+                width: 1px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+
+        .socials-list {
+            bottom: 30px;
+
+            &::before {
+                height: 1px;
+                width: 100px;
+            }
+        }
+    }
+}
+
+
+
+.me-img {
+    .myPic-bg {
+        aspect-ratio: 1/1;
+        background-color: var(--sec-col);
+        width: 60%;
+        clip-path: circle();
+    }
+
+    .img-cont {
+        background-color: transparent;
+        clip-path: circle();
+        overflow: hidden;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+
+@keyframes gradient-anime {
+    from {
+        background-position: 0 50%;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
