@@ -1,0 +1,29 @@
+.about-me {
+    background-color: #1a003e;
+
+    h3 {
+        color: var(--sec-col);
+    }
+
+    .my-pic {
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: transparent;
+        margin: auto;
+        width: min(80%, 300px);
+
+        &::before {
+            content: '';
+            aspect-ratio: 1/1;
+            background-color: var(--sec-col);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            clip-path: circle();
+        }
+    }
+
+}
