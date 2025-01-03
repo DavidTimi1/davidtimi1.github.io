@@ -1,0 +1,20 @@
+
+.placeholder {
+    width: min(679px, 100%);
+
+}
+
+.App {
+    overflow: hidden;
+
+    > * {
+        backdrop-filter: blur(50px) brightness(0.5);
+    }
+}
+
+
+.bg-img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
