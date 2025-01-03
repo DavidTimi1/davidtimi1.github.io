@@ -1,0 +1,47 @@
+.my-navbar {
+    top: 10px;
+    left: 0;
+    position: fixed;
+    width: calc(100% - 10px);
+    z-index: 5;
+
+    .nav-content {
+        background-color: #00000040;
+        backdrop-filter: blur(10px);
+        border-radius: 1em;
+        width: min(90%, 700px);
+    }
+
+    nav {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    
+    .nav-link {
+        color: #aaa;
+        font-weight: 500;
+        text-wrap: nowrap;
+        transition: .25s ease-in-out;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+
+    .menu {
+        padding: 20px 0;
+        
+        .nav-link {
+            opacity: 1;
+            transform: translateY(0);
+
+            .close & {
+                transform: translateY(10px);
+                opacity: 0;
+            }
+        }
+    }
+
+}
