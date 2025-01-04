@@ -26,7 +26,7 @@ function App() {
 			<Skills />
 			<FeaturedProjects />
 			<MyServices />
-			<Testimonials />
+			{/* <Testimonials /> */}
 			<CallToAction />
 			<Footer />
 		</div>

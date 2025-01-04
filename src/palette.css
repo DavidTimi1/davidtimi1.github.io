@@ -79,6 +79,7 @@
 }
 
 .no-link {
+    color: inherit;
     text-decoration: none;
 }
 
