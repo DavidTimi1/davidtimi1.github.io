@@ -6,12 +6,12 @@ import { FBLink, GHLink, LnLink, MailLink, TGLink, XLink } from "../App";
 const Footer = () => {
 	return (
 		<section className="fw">
-			<Aesthetics />
-
+			
 			<footer className="footer fw d-flex flex-column mid-align box gap-2">
 				<Socials />
 				<CPYRight />
 			</footer>
+
 		</section>
 	);
 };
@@ -19,9 +19,6 @@ const Footer = () => {
 export default Footer;
 
 
-const Aesthetics = () => (
-	<></>
-)
 
 const CPYRight = () => (
 	<div className="">
