@@ -23,8 +23,6 @@ export function IconBtn(props){
     if (href !== undefined){
         return (
             <a href={href} target="_blank" rel="noreferrer" onClick={onClick} className="no-link my-a my-iconbtn">
-                <div className="btn-bg max"></div>
-
                 <FontAwesomeIcon icon={icon} size={size ?? "xl"} />
                 <span className="sr-only">
                     { props.children }

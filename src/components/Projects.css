@@ -1,0 +1,14 @@
+.my-recent-projects {
+
+    .img-box {
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        background-color: transparent;
+        margin: auto;
+    }
+
+    small {
+        color: #888;
+    }
+
+}
