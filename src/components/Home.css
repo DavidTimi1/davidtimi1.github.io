@@ -13,6 +13,7 @@
     }
 
     .socials-list {
+        bottom: 0;
     
         &::after, &::before {
             content: "";
@@ -21,13 +22,9 @@
     }
     
     @media screen and (min-width: 768px) {
-        .intro-txt {
-            margin-left: 50px;
-        }
 
         .socials-list {
             flex-direction: column;
-            bottom: 0;
 
             &::after {
                 height: 100px;
@@ -38,13 +35,9 @@
 
     @media screen and (max-width: 768px) {
 
-        .socials-list {
-            bottom: 30px;
-
-            &::before {
-                height: 1px;
-                width: 100px;
-            }
+        .socials-list::before {
+            height: 1px;
+            width: 100px;
         }
     }
 }

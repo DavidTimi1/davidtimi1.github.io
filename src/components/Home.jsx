@@ -17,6 +17,8 @@ const Home = () => {
     return (
         <div className="home fw">
             <div className="box max">
+                <Aesthetics />
+
                 <div className="abs-mid fw pad">
 
                     <div className="intro-txt d-flex flex-column mid-align gap-3 center-text">
@@ -29,19 +31,20 @@ const Home = () => {
                             <span style={{textWrap: "wrap"}}> {ELEVATOR} </span>
                         </p>
                         
-                        <div className="tech-logos d-flex gap-2 mid-align even-space">
+                        <div className="tech-logos d-flex gap-2 mid-align">
                             {
                                 Object.keys(featuredSkills).map( (skill, key) => <SkillImg key={key} name={skill} noTxt icon={ featuredSkills[skill] } /> )
                             }
-
-                            <FontAwesomeIcon icon={faEllipsis} />
+                            <div>
+                                <FontAwesomeIcon icon={faEllipsis} />
+                            </div>
                         </div>
 
                         <div>
                             <a className="no-link btn-primary" href=""  target="_blank" rel="noreferrer" >
-                                <div className="max mid-align flex gap-2">
-                                    <span> Resume </span>
+                                <div className="max mid-align d-flex gap-2">
                                     <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                                    <span> Resume </span>
                                 </div>
                             </a>
                         </div>
@@ -80,5 +83,11 @@ const featuredSkills = {
     django: "ci-django",
     node: "ci-nodejs",
     next: "ci-next",
-    flask: "ci-flask"
+    // flask: "ci-flask"
 }
+
+
+const Aesthetics = () => (
+    <div className="abs" style={{aspectRatio: "1/1", borderRadius: "50%", backgroundColor: "#9f2ba6", top: "5%", right: "10%", filter: "blur(75px)", width: "100px"}}>
+    </div>
+)
