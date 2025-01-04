@@ -5,25 +5,14 @@ import "./About.css";
 const AboutMe = () => {
 
 	return (
-		<section className="about-me box pad d-flex flex-column gap-3 center-text">
-			<h3>About Me</h3>
+		<section className="about-me box pad d-flex flex-column gap-3">
+			<h3 className="center-text">About Me</h3>
 			<div className="img-box fw my-pic">
 				<img src={myPic} className="fw" alt="me" />
 			</div>
 
-			<p className="mx-auto" style={{width: "min(100%, 500px)"}}>
+			<div className="mx-auto" style={{width: "min(100%, 500px)"}}>
 				{aboutTxt}
-			</p>
-
-			<div id="resume-section" className="resume flex">
-				<div>
-					<h4 className="center-text">My Education</h4>
-					<div className="chron-slides">
-						{educationHistory.map((item, index) => {
-							return <Card key={index} props={item} />
-						})}
-					</div>
-				</div>
 			</div>
 		</section>
 	);
@@ -32,20 +21,19 @@ const AboutMe = () => {
 export default AboutMe;
 
 
-const educationHistory = [
-	{
-		descr: { main: "Federal University of Technology Akure", sub: '' },
-		duration: "2023 - Present",
-	}
-]
-
-
-const aboutTxt = `I am a Fullstack Web developer with over 2 uears of e looking to collaborate and build exciting platforms and services
-	that provide utility and improde productivity.`
-// portfolio link, based cities, student at
-
-const Card = () => (
-	<div className="card">
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-	</div>
-)
+const aboutTxt = <> 
+	<p> Heyy! I'm <em> David </em>, </p>
+	<p>
+		For over <em> 2 years </em> now, I have been obsessed making <em> user-centered websites </em> alongside <em> dynamic and progressive web applications </em>.
+	</p>
+	<p>
+		I'm pursuing a Bachelor's degree in Computer Science since I kinda enjoy writing programs.
+		I also participate in hackerthons and work with small teams to materialize great ideas.
+	</p>
+	<p>
+		I quite like the idea of <em> Fancy sophisticated-looking Statistics </em> 😂
+	</p>
+	<p>
+		My other hobbies include playing football and chess
+	</p>
+	</>

@@ -1,7 +1,8 @@
 .about-me {
     background-color: #1a003e;
 
-    h3 {
+    em {
+        font-size: 125%;
         color: var(--sec-col);
     }
 
