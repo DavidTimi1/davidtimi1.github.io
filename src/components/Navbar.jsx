@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import logo from "../assets/react.svg";
+import logo from "../assets/logo.jpg";
 
 import "./navbar.css";
 import { IconBtn } from "./Button";
@@ -22,8 +22,8 @@ const Navbar = () => {
             <div className="nav-content mx-auto">
                 <div className="fw d-flex flex-column">
                     <nav className="fw pad d-flex mid-align gap-5" style={{justifyContent: "space-between"}}>
-                        <div className="flex-shrink-0" style={{width: "50px"}}>
-                            <img src={logo} className="fw" style={{objectFit: "cover"}} />
+                        <div className="flex-shrink-0" style={{width: "40px"}}>
+                            <img src={logo} className="fw" style={{objectFit: "cover", borderRadius: "50%"}} />
                         </div>
 
                         <div className="d-none d-md-flex mid-align gap-2">

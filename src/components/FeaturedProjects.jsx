@@ -4,7 +4,7 @@ import "./Projects.css";
 
 import img1 from "../assets/ref1.png";
 import img2 from "../assets/cooking1.gif";
-import img3 from "../../public/full-large.jpg";
+import img3 from "../assets/full-large.jpg";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

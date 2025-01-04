@@ -21,6 +21,7 @@
     .nav-link {
         color: #aaa;
         font-weight: 500;
+        text-shadow: 0 0 5px #111;
         text-wrap: nowrap;
         transition: .25s ease-in-out;
 
