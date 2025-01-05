@@ -1,16 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import logo from "../assets/logo.jpg";
 
 import "./navbar.css";
 import { IconBtn } from "./Button";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { NavigateContext } from "./contexts.js";
 
 const Links = [
-    {title: "About Me", href: "#about",},
+    {title: "About Me", href: "#about"},
     {title: "Skills", href: "#skills"},
     {title: "Projects", href: "#projects"},
     {title: "Services", href: "#services"},
-    {title: "Contact Me", href: "#contact"},
+    {title: "Contact Me", href: "#contact-me"},
 ]
 
 
@@ -22,9 +23,11 @@ const Navbar = () => {
             <div className="nav-content mx-auto">
                 <div className="fw d-flex flex-column">
                     <nav className="fw pad d-flex mid-align gap-5" style={{justifyContent: "space-between"}}>
-                        <div className="flex-shrink-0" style={{width: "40px"}}>
-                            <img src={logo} className="fw" style={{objectFit: "cover", borderRadius: "50%"}} />
-                        </div>
+                        <a className="no-link" href="#" onClick={handleLogoClick}>
+                            <div className="flex-shrink-0 no-link" style={{width: "40px"}} >
+                                <img src={logo} className="fw" style={{objectFit: "cover", borderRadius: "50%"}} />
+                            </div>
+                        </a>
 
                         <div className="d-none d-md-flex mid-align gap-2">
                             {
@@ -48,6 +51,11 @@ const Navbar = () => {
 
     function toggleMenu(bool){
         setMenu(bool);
+    }
+
+    function handleLogoClick(e){
+        e.preventDefault();
+        navigateTo("")
     }
 
 }
@@ -79,10 +87,20 @@ function Menu({close}){
 }
 
 
-const NavLink = ({children, to, goTo, delay}) => (
-    <a className="no-link no-trans d-flex fw nav-link" href={to} onClick={goTo}>
-        {children}
-    </a>
-)
+const NavLink = ({children, to, delay}) => {
+    const navigateTo = useContext(NavigateContext);
+    
+    return (
+        <a className="no-link no-trans d-flex fw nav-link" href={to} onClick={handleClick}>
+            {children}
+        </a>
+
+    )
+
+    function handleClick(e) {
+        e.preventDefault();
+        navigateTo(to.slice(1));
+    }
+}
 
 export default Navbar;
