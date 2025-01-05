@@ -60,8 +60,8 @@ export default App;
 
 
 export const TGLink = "#";
-export const MailLink = "#";
+export const MailLink = "mailto:duwagbale07@gmail.com";
 export const LnLink = "#";
-export const GHLink = "#";
-export const XLink = "#";
+export const GHLink = "https://github.com/DavidTimi1";
+export const XLink = "https://x.com/DavidTimi_1";
 export const FBLink = "#";
