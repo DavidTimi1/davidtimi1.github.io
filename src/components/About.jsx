@@ -1,11 +1,19 @@
+import { useRef } from "react";
 import myPic from "../assets/cooking1.gif";
 import "./About.css";
+import useIntersectionObserver from "./ViewportObserver";
 
 
 const AboutMe = () => {
+	const ref = useRef(null);
+
+    const isObserving = useIntersectionObserver({
+        elementRef: ref,
+        onIntersect: handleVisibilityChange,
+    });
 
 	return (
-		<section className="about-me box pad d-flex flex-column gap-3">
+		<section className="about-me box pad d-flex flex-column gap-3 can-animate" ref={ref}>
 			<h3 className="center-text">About Me</h3>
 			<div className="img-box fw my-pic">
 				<img src={myPic} className="fw" alt="me" />
@@ -16,6 +24,16 @@ const AboutMe = () => {
 			</div>
 		</section>
 	);
+
+
+	function handleVisibilityChange(isVisible){
+		if (isVisible){
+			ref.current.classList.add("animated");
+			ref.current.classList.remove("no-emp");
+		} else {
+			ref.current.classList.add("no-emp");
+		}
+	}
 };
 
 export default AboutMe;
