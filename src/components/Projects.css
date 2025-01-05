@@ -10,5 +10,19 @@
     small {
         color: #888;
     }
+    
 
+    .project-card {
+        &.can-animate {
+            opacity: 0;
+            transition: .5s ease-in-out;
+            transform: translateY(30px);
+            
+            &.animated {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+    }
 }

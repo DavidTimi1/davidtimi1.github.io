@@ -7,18 +7,26 @@ import img2 from "../assets/cooking1.gif";
 import img3 from "../assets/full-large.jpg";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRef } from "react";
+import useIntersectionObserver from "./ViewportObserver";
+
 
 const FeaturedProjects = () => {
+
+
 	return (
-		<section className="my-recent-projects box fw">
+		<section id="projects" className="my-recent-projects box fw">
 			<div className="pad fw d-flex flex-column mid-align gap-5">
 				<h3 className=" center-text">My Recent Projects</h3>
+
 				<div className="d-flex mid-align flex-wrap even-space fw gap-4">
 					{ projects.map((item, key) => <Project key={key} {...item} /> )}
 				</div>
 			</div>
 		</section>
 	);
+
+	
 };
 
 export default FeaturedProjects;
@@ -72,6 +80,14 @@ const projects = [
 
 
 function Project({name, descr, imgs, tools, links }){
+	const ref = useRef(null);
+
+    const isObserving = useIntersectionObserver({
+        elementRef: ref,
+        onIntersect: handleVisibilityChange,
+    });
+
+
 	return (
 		<div className="project-card">
 			<div className="fw d-flex flex-column">
@@ -120,4 +136,15 @@ function Project({name, descr, imgs, tools, links }){
 			</div>
 		</div>
 	)
+	
+	function handleVisibilityChange(isVisible){
+
+		if (isVisible){
+			ref.current.classList.add("animated");
+			ref.current.classList.remove("no-emp");
+
+		} else {
+			ref.current.classList.add("no-emp");
+		}
+	}
 }
