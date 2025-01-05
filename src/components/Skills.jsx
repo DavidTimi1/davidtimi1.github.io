@@ -1,11 +1,23 @@
+import "./Skills.css"
+
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useIntersectionObserver from "./ViewportObserver";
+import { useRef } from "react";
 
 
 const Skills = () => {
+	const ref = useRef(null);
+
+    const isObserving = useIntersectionObserver({
+        elementRef: ref,
+        onIntersect: handleVisibilityChange,
+    });
+
+
     return (
-        <section className="Skills fw">
-            <div className="box pad fw">
+        <section className="Skills fw can-animate" ref={ref}>
+            <div id="skills" className="box pad fw">
                 <div className="d-flex flex-column center-text mid-align gap-5">
 
                     <h3> Skills / <br></br>
@@ -30,6 +42,15 @@ const Skills = () => {
             </div>
         </section>
     );
+    
+	function handleVisibilityChange(isVisible){
+		if (isVisible){
+			ref.current.classList.add("animated");
+			ref.current.classList.remove("no-emp");
+		} else {
+			ref.current.classList.add("no-emp");
+		}
+	}
 };
 
 export const SkillImg =({name, icon, noTxt, size = "2x"}) => (
