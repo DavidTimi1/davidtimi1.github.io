@@ -3,19 +3,21 @@ import"./Home.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, IconBtn } from "./Button";
-import { faArrowUpRightFromSquare, faEllipsis, faEnvelope, faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDoubleDown, faArrowUpRightFromSquare, faEllipsis, faEnvelope, faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { GHLink, LnLink, MailLink, XLink } from "../App";
 import { SkillImg } from "./Skills";
+import { useContext } from "react";
+import { NavigateContext } from "./contexts.js";
 
 
 const ELEVATOR = ""
 
 const Home = () => {
-
+    const navigateTo = useContext(NavigateContext);
 
     return (
-        <div className="home fw">
+        <div id="" className="home fw">
             <div className="box max">
                 <Aesthetics />
 
@@ -40,13 +42,19 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div>
-                            <a className="no-link btn-primary" href=""  target="_blank" rel="noreferrer" >
+                        <div className="d-flex flex-column gap-2 flex-md-row">
+                            <a className="no-link btn-primary sec" href=""  target="_blank" rel="noreferrer" >
                                 <div className="max mid-align d-flex gap-2">
                                     <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                                     <span> Resume </span>
                                 </div>
                             </a>
+                            <button className="no-link btn-primary" onClick={() => navigateTo("projects")} >
+                                <div className="max mid-align d-flex gap-2">
+                                    <FontAwesomeIcon icon={faAngleDoubleDown} />
+                                    <span> See my work </span>
+                                </div>
+                            </button>
                         </div>
 
                     </div>

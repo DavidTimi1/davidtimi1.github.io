@@ -2,12 +2,12 @@
 const CallToAction = () => {
     return (
         <>
-        <section className="pad box">
+        <section id="contact-me" className="pad box" style={{scrollMarginTop: "40px"}}>
 
             <Aesthetics />
 
             <div className="mx-auto call-to-action br-1" style={{width: "min(100%, 600px)"}}>
-                <h3>Want to Collaborate ?</h3>
+                <h3> Lets's build something amazing together! </h3>
                 <button className="btn-primary" href=""  target="_blank" rel="noreferrer" >
                     <div className="max">
                         <span> Hit Me Up! </span>

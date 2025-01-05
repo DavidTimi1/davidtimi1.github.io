@@ -2,7 +2,7 @@
 const MyServices = () => {
     return (
         
-        <section className="my-services box fw">
+        <section id="services" className="my-services box fw">
             <Aesthetics />
 
 			<div className="pad fw d-flex flex-column mid-align gap-5">
