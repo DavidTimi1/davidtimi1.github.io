@@ -17,7 +17,7 @@ import { useEffect } from 'react';
 import { NavigateContext } from './components/contexts.js';
 
 
-const routes = ["", "about", "skills", "projects", "services", "contact-me"]
+const routes = ["home", "about", "skills", "projects", "services", "contact-me"]
 
 function App() {
 

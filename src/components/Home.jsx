@@ -17,7 +17,7 @@ const Home = () => {
     const navigateTo = useContext(NavigateContext);
 
     return (
-        <div id="" className="home fw">
+        <div id="home" className="home fw">
             <div className="box max">
                 <Aesthetics />
 

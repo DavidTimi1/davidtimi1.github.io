@@ -17,6 +17,7 @@ const Links = [
 
 const Navbar = () => {
     const [showMenu, setMenu] = useState(false);
+    const navigateTo = useContext(NavigateContext);
 
     return (
         <section className="my-navbar fw" >
@@ -55,7 +56,7 @@ const Navbar = () => {
 
     function handleLogoClick(e){
         e.preventDefault();
-        navigateTo("")
+        navigateTo("home")
     }
 
 }
