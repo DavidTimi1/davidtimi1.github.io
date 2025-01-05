@@ -13,12 +13,27 @@ import Testimonials from './components/Testimonials';
 import CallToAction from './components/CTA';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { useEffect } from 'react';
+import { NavigateContext } from './components/contexts.js';
+
+
+const routes = ["", "about", "skills", "projects", "services", "contact-me"]
 
 function App() {
+
+	useEffect(() => {
+		const hash = window.location.hash.slice(1);
+
+		if (hash && routes.includes(hash)) {
+			setTimeout(() => goTo(hash), 1000);
+		}
+
+	}, []);
 
 	return (
 		// <Placeholder />
 		<div className="App custom-scroll">
+		<NavigateContext.Provider value={goTo}>
 
 			<Navbar />
 			<Home />
@@ -29,8 +44,17 @@ function App() {
 			{/* <Testimonials /> */}
 			<CallToAction />
 			<Footer />
+			
+		</NavigateContext.Provider>
 		</div>
 	);
+
+	function goTo(hash){
+		document.getElementById(hash).scrollIntoView({
+			behavior: "smooth",
+			start: "inline"
+		})
+	}
 }
 export default App;
 
