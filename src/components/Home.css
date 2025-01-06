@@ -1,5 +1,8 @@
 .home {
     height: 82.5vh;
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.75s ease-in-out;
 
     .brand {
         background: linear-gradient(135deg, var(--tert-col) 10%, var(--sec-col), pink);
@@ -19,6 +22,12 @@
             content: "";
             background-color: var(--sec-col);
         }
+
+        > * {
+            opacity: 1;
+            transition: .5s .75s ease;
+            transform: translate(0,0);
+        }
     }
     
     @media screen and (min-width: 768px) {
@@ -31,6 +40,13 @@
                 width: 1px;
             }
         }
+
+        @starting-style {
+            .socials-list > * {
+                transform: translate(0, -10px);
+                opacity: 0;
+            }
+        }
     }
 
     @media screen and (max-width: 768px) {
@@ -38,6 +54,20 @@
         .socials-list::before {
             height: 1px;
             width: 100px;
+        }
+
+        @starting-style {
+            .socials-list > * {
+                transform: translate(10px,0);
+                opacity: 0;
+            }
+        }
+    }
+
+    @starting-style {
+        & {
+            transform: translateY(50px);
+            opacity: 0;
         }
     }
 }
