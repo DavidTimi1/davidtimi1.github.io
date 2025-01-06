@@ -2,9 +2,11 @@ import { Button } from "./Button";
 import { SkillImg } from "./Skills";
 import "./Projects.css";
 
-import img1 from "../assets/ref1.png";
-import img2 from "../assets/cooking1.gif";
-import img3 from "../assets/full-large.jpg";
+import chessImg from "../assets/chess.jpg";
+import merryChristmasImg from "../assets/merry-christmas.jpg";
+import portfolioImg from "../assets/portfolio.jpg";
+import cookingGIF from "../assets/cooking1.gif";
+
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef } from "react";
@@ -21,6 +23,9 @@ const FeaturedProjects = () => {
 
 				<div className="d-flex mid-align flex-wrap even-space fw gap-4">
 					{ projects.map((item, key) => <Project key={key} {...item} /> )}
+
+					<Anticipate />
+					
 				</div>
 			</div>
 		</section>
@@ -37,49 +42,44 @@ export default FeaturedProjects;
 const projects = [
 	{
 		name: "Portfolio",
-		imgs: [img1, img2, img3],
+		imgs: [portfolioImg],
 		descr: "My portfolio website",
 		tools: {
 			reactjs: "ci-react",
-			django: "ci-django",
-			node: "ci-nodejs",
-			next: "ci-next",
-			// flask: "ci-flask"
+			css: "ci-css",
+			bootstrap: "ci-bootstrap",
+			github: "ci-github",
 		},
 		featured: true,
-        thoughts: null,
-		links: ["https://davidtimi1.github.io", "https://github.com/DavidTimi1"]
+		links: ["https://davidtimi1.github.io", "https://github.com/DavidTimi1/davidtimi1.github.io"]
 	},
 	{
-		name: "MelodyMatch",
-		imgs: [img2, img3, img1],
+		name: "2D Multiplayer Chess",
+		imgs: [chessImg],
 		tools: {
-			reactjs: "ci-react",
-			django: "ci-django",
-			node: "ci-nodejs",
-			next: "ci-next",
-			// flask: "ci-flask"
+			html: "ci-html",
+			css: "ci-css",
+			javascript: "ci-js",
 		},
-		descr: "A song finder website",
-		links: ["https://github.com/DavidTimi1"]
+		descr: "2D Chess game inspired by famous **Chess Titans**",
+		links: ["https://rawcdn.githack.com/DavidTimi1/Chess/64c39e35f42adec0175795ddaa860131c2ec0868/Chess.html", "https://github.com/DavidTimi1/Chess"]
 	},
 	{
-		name: "WhatsappAI",
-		imgs: [img3, img1, img2],
+		name: "12 Days of Christmas",
+		imgs: [merryChristmasImg],
 		tools: {
 			reactjs: "ci-react",
-			django: "ci-django",
-			node: "ci-nodejs",
-			next: "ci-next",
-			// flask: "ci-flask"
+			css: "ci-css",
+			javascript: "ci-js",
+			
 		},
-		descr: "Whatsapp bot",
-		links: ["https://davidtimi1.github.io", "https://github.com/DavidTimi1"]
+		descr: "Simple season's greetings page with a special gift every day for the 12 Days of Christmas",
+		links: ["https://merry-christmas-phi.vercel.app", "https://github.com/DavidTimi1/Merry-christmas"]
 	}
 ];
 
 
-function Project({name, descr, imgs, tools, links }){
+const Project = ({name, descr, imgs, tools, links }) => {
 	const ref = useRef(null);
 
     const isObserving = useIntersectionObserver({
@@ -110,7 +110,7 @@ function Project({name, descr, imgs, tools, links }){
 						{
 							links[0] &&
 						<div>
-							<a className="no-link btn-primary" href=""  target="_blank" rel="noreferrer" >
+							<a className="no-link btn-primary" href={links[0]}  target="_blank" rel="noreferrer" >
 								<div className="max mid-align d-flex gap-2">
 									<FontAwesomeIcon icon={faArrowUpRightFromSquare} />
 									<span> View Live </span>
@@ -122,7 +122,7 @@ function Project({name, descr, imgs, tools, links }){
 						{
 							links[1] &&
 						<div>
-							<a className="no-link btn-primary sec" href=""  target="_blank" rel="noreferrer" >
+							<a className="no-link btn-primary sec" href={links[1]}  target="_blank" rel="noreferrer" >
 								<div className="max mid-align d-flex gap-2">
 									<FontAwesomeIcon icon={faArrowUpRightFromSquare} />
 									<span> Github </span>
@@ -148,3 +148,24 @@ function Project({name, descr, imgs, tools, links }){
 		}
 	}
 }
+
+
+const Anticipate = () => (
+	
+	<div className="project-card">
+		<div className="fw d-flex flex-column">
+			<div className="fw img-box" style={{aspectRatio: "3/2"}}>
+				<img src={cookingGIF} className="max" />
+			</div>
+			<div className="fw d-flex flex-column gap-2" style={{padding: "20px"}}>
+				<h4> Coming Very Soon ... 🔥🔥 </h4>
+				<ul>
+					<li> Message50 (E2EE Chat App) </li>
+					<li> Pic2Plate </li>
+					<li> Ludo Multiplayer Game </li>
+					<li> Weather App (a creative one 🤞) </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+)
