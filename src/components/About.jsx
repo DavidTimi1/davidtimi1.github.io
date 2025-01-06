@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import myPic from "../assets/cooking1.gif";
+import myPic from "../assets/profile.jpg";
 import "./About.css";
 import useIntersectionObserver from "./ViewportObserver";
 
