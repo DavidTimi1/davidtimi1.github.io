@@ -59,9 +59,9 @@ function App() {
 export default App;
 
 
-export const TGLink = "#";
+export const TGLink = "https://t.me/timidev1";
+export const FBLink = "https://facebook.com/timiballer.david";
 export const MailLink = "mailto:duwagbale07@gmail.com";
-export const LnLink = "#";
+export const LnLink = "https://linkedin.com/in/daviduwagbale";
 export const GHLink = "https://github.com/DavidTimi1";
 export const XLink = "https://x.com/DavidTimi_1";
-export const FBLink = "#";
