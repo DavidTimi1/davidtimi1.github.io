@@ -6,7 +6,7 @@
     z-index: 5;
 
     .nav-content {
-        background-color: #00000040;
+        background-color: #ffffff15;
         backdrop-filter: blur(10px);
         border-radius: 1em;
         width: min(90%, 700px);

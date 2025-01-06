@@ -8,11 +8,11 @@ const CallToAction = () => {
 
             <div className="mx-auto call-to-action br-1" style={{width: "min(100%, 600px)"}}>
                 <h3> Lets's build something amazing together! </h3>
-                <button className="btn-primary" href=""  target="_blank" rel="noreferrer" >
+                <a className="no-link btn-primary" href={collaboLink}  target="_blank" rel="noreferrer" >
                     <div className="max">
                         <span> Hit Me Up! </span>
                     </div>
-                </button>
+                </a>
             </div>
         </section>
 
@@ -25,6 +25,8 @@ export default CallToAction;
 
 
 
+
+const collaboLink = "mailto:duwagbale07@gmail.com?subject=Request to [Collaborate/Hire]";
 
 const Aesthetics = () => (
     <>
