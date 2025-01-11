@@ -1,7 +1,8 @@
 import { faFacebook, faGithub, faLinkedin, faTelegram, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { IconBtn } from "./Button";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FBLink, GHLink, LnLink, MailLink, TGLink, XLink } from "../App";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
 	return (
@@ -9,6 +10,7 @@ const Footer = () => {
 			
 			<footer className="footer fw d-flex flex-column mid-align box gap-2">
 				<Socials />
+				<Star />
 				<CPYRight />
 			</footer>
 
@@ -24,6 +26,13 @@ const CPYRight = () => (
 	<div className="">
 		&copy; { new Date().getFullYear() } All rights reserved
 	</div>
+)
+
+const Star = () => (
+	<a href="https://github.com/DavidTimi1/davidtimi1.github.io" target="_blank" rel="noreferrer">
+		<FontAwesomeIcon icon={faStar} />
+		<span> Star on Github </span>
+	</a>
 )
 
 const Socials = () => (
