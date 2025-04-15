@@ -56,7 +56,12 @@ const Skills = () => {
 export const SkillImg =({name, icon, noTxt, size = "2x"}) => (
     <div className="d-flex flex-column mid-align" style={{padding: "5px"}}>
         <div className="skill-item">
-            <i role="img" className={`ci ${icon} ci-${size}`}></i>
+            {
+                icon.alt?
+                 <span className={`text-${size}`}>{icon.alt}</span>
+                :
+                <i role="img" className={`ci ${!icon.alt && icon} ci-${size}`} />
+            }
         </div>
 
         { !noTxt && <small> {name} </small>  }
@@ -70,21 +75,22 @@ const skillList = {
     html: "ci-html",
     css: "ci-css",
     javascript: "ci-js",
+    typescript: "ci-ts",
     reactjs: "ci-react",
     tailwind: "ci-tailwind",
     node: "ci-nodejs",
     next: "ci-next",
     python: "ci-python",
     django: "ci-django",
-    flask: "ci-flask",
+    flask: "ci-flask-light",
     bootstrap: "ci-bootstrap",
-    sql: "ci-sql",
-    nosql: "ci-nosql",
+    mySQL: "ci-mysql",
+    // nosql: "ci-nosql",
     git: "ci-git",
     github: "ci-github",
     figma: "ci-figma",
     c: "ci-c",
-    mysql: "ci-mysql"
+    postgreSQL: "ci-postgresql",
 }
 // [
 //     "html", "css", "javascript", "tailwind", "bootstrap", "nodejs","nextjs", "python", "django", "flask", "sql", "nosql", "git", "figma"

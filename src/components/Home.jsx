@@ -44,7 +44,7 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className="d-flex flex-column gap-2 flex-md-row">
+                        <div className="d-flex flex-column gap-2 mid-align flex-md-row">
                             <a className="no-link btn-primary sec" href={resumeLink}  target="_blank" rel="noreferrer" >
                                 <div className="max mid-align d-flex gap-2">
                                     <FontAwesomeIcon icon={faArrowUpRightFromSquare} />

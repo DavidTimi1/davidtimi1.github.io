@@ -6,6 +6,8 @@ import chessImg from "../assets/chess.jpg";
 import merryChristmasImg from "../assets/merry-christmas.jpg";
 import portfolioImg from "../assets/portfolio.jpg";
 import cookingGIF from "../assets/cooking1.gif";
+import pic2plateImg from "../assets/pic2plate.webp";
+import ludoGameImg from "../assets/ludo-game.png"
 
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -41,16 +43,44 @@ export default FeaturedProjects;
 
 const projects = [
 	{
+		name: "Pic2Plate",
+		imgs: [pic2plateImg],
+		featured: true,
+		tools: {
+			next: "ci-next",
+			tailwind: "ci-tailwind",
+			javascript: "ci-ts",
+			postgreSQL: "ci-postgresql",
+			cloudinary: "ci-cloudinary-horizontal",
+			gemini: {alt: "✨"}		
+		},
+		descr: "Take a picture of a meal or describe it and get the recipe instantly!",
+		links: ["https://pic2plate-tau.vercel.app", "https://github.com/davidtimi1/pic2plate"]
+	},
+	{
+		name: "Ludo Multiplayer Game",
+		imgs: [ludoGameImg],
+		featured: true,
+		tools: {
+			html: "ci-html",
+			css: "ci-css",
+			tailwind: "ci-tailwind",
+			javascript: "ci-js",
+			github: "ci-github",
+		},
+		descr: "Play the classical board game - Ludo with friends or against AI using this web-based implementation!",
+		links: ["https://davidtimi1.github.io/Ludo-Game", "https://github.com/DavidTimi1/Ludo-Game"]
+	},
+	{
 		name: "Portfolio",
 		imgs: [portfolioImg],
-		descr: "My portfolio website",
 		tools: {
 			reactjs: "ci-react",
 			css: "ci-css",
 			bootstrap: "ci-bootstrap",
 			github: "ci-github",
 		},
-		featured: true,
+		descr: "My portfolio website",
 		links: ["https://davidtimi1.github.io", "https://github.com/DavidTimi1/davidtimi1.github.io"]
 	},
 	{
@@ -70,16 +100,16 @@ const projects = [
 		tools: {
 			reactjs: "ci-react",
 			css: "ci-css",
-			javascript: "ci-js",
+			javascript: "ci-ts",
 			
 		},
 		descr: "Simple season's greetings page with a special gift every day for the 12 Days of Christmas",
 		links: ["https://merry-christmas-phi.vercel.app", "https://github.com/DavidTimi1/Merry-christmas"]
-	}
+	},
 ];
 
 
-const Project = ({name, descr, imgs, tools, links }) => {
+const Project = ({name, descr, imgs, tools, links, featured }) => {
 	const ref = useRef(null);
 
     const isObserving = useIntersectionObserver({
@@ -89,10 +119,28 @@ const Project = ({name, descr, imgs, tools, links }) => {
 
 
 	return (
-		<div className="project-card">
+		<div className="project-card position-relative">
 			<div className="fw d-flex flex-column">
 				<div className="fw img-box" style={{aspectRatio: "3/2"}}>
 					<img src={imgs[0]} className="max" />
+
+					{featured && (
+						<span 
+						className="badge position-absolute top-0 end-0 p-2 rounded-pill shadow-sm" 
+						style={{
+							zIndex: 1,
+							background: "linear-gradient(45deg, #ff416c, #ff4b2b)",
+							color: "#fff",
+							fontWeight: "bold",
+							fontSize: "0.9rem",
+							margin: "10px",
+							padding: "5px 10px",
+							boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)"
+						}}
+						>
+							🌟 Featured
+						</span>
+					)}
 				</div>
 				<div className="fw d-flex flex-column gap-2" style={{padding: "20px"}}>
 					<div>
@@ -161,9 +209,7 @@ const Anticipate = () => (
 				<h4> Coming Very Soon ... 🔥🔥 </h4>
 				<ul>
 					<li> Message50 (E2EE Chat App) </li>
-					<li> Pic2Plate </li>
 					<li> Ludo Multiplayer Game </li>
-					<li> Weather App (a creative one 🤞) </li>
 				</ul>
 			</div>
 		</div>

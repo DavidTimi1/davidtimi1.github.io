@@ -19,7 +19,7 @@ const AboutMe = () => {
 				<img src={myPic} className="fw" alt="me" />
 			</div>
 
-			<div className="mx-auto" style={{width: "min(100%, 500px)"}}>
+			<div className="mx-auto" style={{width: "min(95%, 500px)"}}>
 				{aboutTxt}
 			</div>
 		</section>
@@ -46,7 +46,7 @@ const aboutTxt = <>
 	</p>
 	<p>
 		I'm pursuing a Bachelor's degree in Computer Science since I kinda enjoy writing programs.
-		I also participate in hackerthons and work with small teams to materialize great ideas.
+		I also participate in hackathons, working with small teams to bring life to great ideas.
 	</p>
 	<p>
 		I quite like the idea of <em> Fancy sophisticated-looking Statistics </em> 😂

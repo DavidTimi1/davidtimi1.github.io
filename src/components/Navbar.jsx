@@ -26,7 +26,7 @@ const Navbar = () => {
                     <nav className="fw pad d-flex mid-align gap-5" style={{justifyContent: "space-between"}}>
                         <a className="no-link" href="#" onClick={handleLogoClick}>
                             <div className="flex-shrink-0 no-link" style={{width: "40px"}} >
-                                <img src={logo} className="fw" style={{objectFit: "cover", borderRadius: "50%"}} />
+                                <img src={logo} className="fw" alt="link to home" style={{objectFit: "cover", borderRadius: "50%"}} />
                             </div>
                         </a>
 
