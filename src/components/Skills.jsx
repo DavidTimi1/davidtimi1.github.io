@@ -82,7 +82,6 @@ const skillList = {
     next: "ci-next",
     python: "ci-python",
     django: "ci-django",
-    flask: "ci-flask-light",
     bootstrap: "ci-bootstrap",
     mySQL: "ci-mysql",
     // nosql: "ci-nosql",

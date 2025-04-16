@@ -55,6 +55,19 @@ const Home = () => {
                                 <div className="max mid-align d-flex gap-2">
                                     <FontAwesomeIcon icon={faAngleDoubleDown} />
                                     <span> See my work </span>
+                                    <span 
+                                        className="badge position-absolute p-1 rounded-pill shadow-sm" 
+                                        style={{
+                                            zIndex: 1,
+                                            bottom: "50%",
+                                            right: "-5px",
+                                            background: "linear-gradient(45deg, #ff416c, #ff4b2b)",
+                                            fontSize: "0.8rem",
+                                            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)"
+                                        }}
+                                        >
+                                        🌟
+                                    </span>
                                 </div>
                             </button>
                         </div>

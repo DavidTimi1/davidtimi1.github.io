@@ -7,7 +7,8 @@ import merryChristmasImg from "../assets/merry-christmas.jpg";
 import portfolioImg from "../assets/portfolio.jpg";
 import cookingGIF from "../assets/cooking1.gif";
 import pic2plateImg from "../assets/pic2plate.webp";
-import ludoGameImg from "../assets/ludo-game.png"
+import ludoGameImg from "../assets/ludo-game.png";
+import message50Img from "../assets/message-50.jpg";
 
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -43,13 +44,29 @@ export default FeaturedProjects;
 
 const projects = [
 	{
+		name: "Message50",
+		imgs: [message50Img],
+		featured: true,
+		tools: {
+			reactjs: "ci-react",
+			css: "ci-css",
+			bootstrap: "ci-bootstrap",
+			javascript: "ci-js",
+			python: "ci-python",
+			django: "ci-django",
+			postgreSQL: "ci-postgresql"
+		},
+		descr: "End-to-end Encrypted Messaging Web Application. Quick, Secure and Seamless Messaging Platform!",
+		links: ["https://message50-frontend.vercel.app"]
+	},
+	{
 		name: "Pic2Plate",
 		imgs: [pic2plateImg],
 		featured: true,
 		tools: {
 			next: "ci-next",
 			tailwind: "ci-tailwind",
-			javascript: "ci-ts",
+			typescript: "ci-ts",
 			postgreSQL: "ci-postgresql",
 			cloudinary: "ci-cloudinary-horizontal",
 			gemini: {alt: "✨"}		
