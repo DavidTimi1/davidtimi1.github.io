@@ -29,7 +29,7 @@ const Home = () => {
                         <h3> Heyy 👋 I'm 
                             <span className="brand"> David</span>, 
                         </h3>
-                        <h5> a <span className="brand"> Fullstack Web Developer </span> </h5>
+                        <h5> a <span className="brand"> FullStack Developer </span> </h5>
 
                         <p>
                             <span style={{textWrap: "wrap"}}> {ELEVATOR} </span>
