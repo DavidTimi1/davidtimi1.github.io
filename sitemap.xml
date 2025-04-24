@@ -4,7 +4,19 @@
   
   <url>
     <loc>davidtimi1.github.io/</loc>
-    <lastmod>2025-04-14</lastmod>
+    <lastmod>2025-04-24</lastmod>
     <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>davidtimi1.github.io/ProfileCard</loc>
+    <lastmod>2025-04-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>davidtimi1.github.io/Chess</loc>
+    <lastmod>2025-04-24</lastmod>
+    <priority>0.8</priority>
   </url>
 </urlset>
