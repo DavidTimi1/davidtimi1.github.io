@@ -18,6 +18,10 @@ import { NavigateContext } from './components/contexts.js';
 
 
 const routes = ["home", "about", "skills", "projects", "services", "contact-me"]
+export const NAME = "David Uwagbale";
+export const ALIAS = "Dev_id, TimiDev";
+export const ROLE = "Full-stack Developer";
+
 
 function App() {
 
@@ -32,7 +36,7 @@ function App() {
 
 	return (
 		// <Placeholder />
-		<div className="App custom-scroll">
+		<main className="App custom-scroll">
 		<NavigateContext.Provider value={goTo}>
 
 			<Navbar />
@@ -46,7 +50,7 @@ function App() {
 			<Footer />
 			
 		</NavigateContext.Provider>
-		</div>
+		</main>
 	);
 
 	function goTo(hash){

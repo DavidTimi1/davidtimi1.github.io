@@ -7,8 +7,9 @@ const CallToAction = () => {
             <Aesthetics />
 
             <div className="mx-auto call-to-action br-1" style={{width: "min(100%, 600px)"}}>
-                <h3> Lets's build something amazing together! </h3>
+                <h2> Lets's build something amazing together! </h2>
                 <a className="no-link btn-primary" href={collaboLink}  target="_blank" rel="noreferrer" >
+                    <span className="sr-only">My email address,</span>
                     <div className="max">
                         <span> Hit Me Up! </span>
                     </div>

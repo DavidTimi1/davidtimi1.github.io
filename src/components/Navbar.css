@@ -33,6 +33,20 @@
 
     .menu {
         padding: 20px 0;
+        transition: .3s;
+        height: auto;
+
+        @starting-style {
+            & {
+                height: 0px;
+                padding: 0;
+            }
+        }
+
+        .close {
+            height: 0px;
+            padding: 0;
+        }
         
         .nav-link {
             opacity: 1;

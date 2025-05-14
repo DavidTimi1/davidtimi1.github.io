@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, IconBtn } from "./Button";
 import { faAngleDoubleDown, faArrowUpRightFromSquare, faEllipsis, faEnvelope, faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin, faXTwitter } from "@fortawesome/free-brands-svg-icons";
-import { GHLink, MailLink, XLink } from "../App";
+import { GHLink, MailLink, ROLE, XLink } from "../App";
 import { SkillImg } from "./Skills";
 import { useContext } from "react";
 import { NavigateContext } from "./contexts.js";
@@ -26,28 +26,33 @@ const Home = () => {
                 <div className="abs-mid fw pad">
 
                     <div className="intro-txt d-flex flex-column mid-align gap-3 center-text">
-                        <h3> Heyy 👋 I'm 
+                        <h1 className="fs-2 m-0"> Heyy 👋 I'm 
                             <span className="brand"> David</span>, 
-                        </h3>
-                        <h5> a <span className="brand"> FullStack Developer </span> </h5>
+                        </h1>
+                        <h1 className="fs-2 m-0"> a <span className="brand"> FullStack Developer </span> </h1>
 
                         <p>
                             <span style={{textWrap: "wrap"}}> {ELEVATOR} </span>
                         </p>
                         
-                        <div className="tech-logos d-flex gap-2 mid-align">
+                        <em className="sr-only">
+                            As a {ROLE}, I am an expert in:
+                        </em>
+                        <ul className="tech-logos d-flex gap-2 mid-align">
                             {
                                 Object.keys(featuredSkills).map( (skill, key) => <SkillImg key={key} name={skill} noTxt icon={ featuredSkills[skill] } /> )
                             }
                             <div>
                                 <FontAwesomeIcon icon={faEllipsis} />
+                                <span className="sr-only">just to mention a few</span>
                             </div>
-                        </div>
+                        </ul>
 
                         <div className="d-flex flex-column gap-2 mid-align flex-md-row">
                             <a className="no-link btn-primary sec" href={resumeLink}  target="_blank" rel="noreferrer" >
                                 <div className="max mid-align d-flex gap-2">
                                     <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                                    <span className="sr-only">Link to my </span>
                                     <span> Resume </span>
                                 </div>
                             </a>
@@ -79,13 +84,13 @@ const Home = () => {
                 
                 <div className="abs pad socials-list d-flex gap-3 mid-align">
                         <IconBtn href={GHLink} icon={faGithub}>
-                            Link to Github
+                            Link to my Github
                         </IconBtn>
                         <IconBtn href={XLink} icon={faXTwitter}>
-                            Link to twitter
+                            Link to my twitter
                         </IconBtn>
                         <IconBtn href={MailLink} icon={faEnvelope}>
-                            Link to Mail
+                            Link to my Mail
                         </IconBtn>
                     </div>
             </div>

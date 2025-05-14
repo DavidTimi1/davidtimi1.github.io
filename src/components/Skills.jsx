@@ -4,6 +4,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useIntersectionObserver from "./ViewportObserver";
 import { useRef } from "react";
+import { ROLE } from "../App";
 
 
 const Skills = () => {
@@ -20,11 +21,12 @@ const Skills = () => {
             <div id="skills" className="box pad fw">
                 <div className="d-flex flex-column center-text mid-align gap-5">
 
-                    <h3> Skills / <br></br>
+                    <h1 className="fs-2 m-0"> Skills / <br></br>
                         Technologies I Use
-                    </h3>
+                    </h1> 
+                    <em className="sr-only"> as a {ROLE} </em>
 
-                    <div className="tech-logos d-flex gap-3 flex-wrap mid-align even-space" style={{width: "min(100%, 500px)"}}>
+                    <ul className="tech-logos d-flex gap-3 flex-wrap mid-align even-space" style={{width: "min(100%, 500px)"}}>
                         {
                             Object.keys(skillList).map( (skill, key) => <SkillImg key={key} name={skill} icon={skillList[skill]} size="3x" /> )
                         }
@@ -34,7 +36,7 @@ const Skills = () => {
                                 Many more
                             </span>
                         </div>
-                    </div>
+                    </ul>
 
                 </div>
 
@@ -54,7 +56,7 @@ const Skills = () => {
 };
 
 export const SkillImg =({name, icon, noTxt, size = "2x"}) => (
-    <div className="d-flex flex-column mid-align" style={{padding: "5px"}}>
+    <li className="d-flex flex-column mid-align" style={{padding: "5px"}}>
         <div className="skill-item">
             {
                 icon.alt?
@@ -64,8 +66,8 @@ export const SkillImg =({name, icon, noTxt, size = "2x"}) => (
             }
         </div>
 
-        { !noTxt && <small> {name} </small>  }
-    </div>
+        { noTxt? <span className="sr-only"> {name} </span> : <small> {name} </small>  }
+    </li>
 )
 
 export default Skills;

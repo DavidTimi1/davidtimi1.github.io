@@ -1,7 +1,7 @@
 import { faFacebook, faGithub, faLinkedin, faTelegram, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { IconBtn } from "./Button";
 import { faEnvelope, faStar } from "@fortawesome/free-solid-svg-icons";
-import { FBLink, GHLink, LnLink, MailLink, TGLink, XLink } from "../App";
+import { FBLink, GHLink, LnLink, MailLink, NAME, TGLink, XLink } from "../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
@@ -38,22 +38,22 @@ const Star = () => (
 const Socials = () => (
 	<div className="d-flex flex-wrap mid-align gap-3" style={{justifyContent: "space-around"}}>
 		<IconBtn href={XLink} icon={faXTwitter}>
-			Link to twitter
+			Link to {NAME}&apos;s twitter
 		</IconBtn>
 		<IconBtn href={FBLink} icon={faFacebook}>
-			Link to facebook
+			Link to {NAME}&apos;s facebook
 		</IconBtn>
 		<IconBtn href={TGLink} icon={faTelegram}>
-			Link to telegram
+			Link to {NAME}&apos;s telegram
 		</IconBtn>
 		<IconBtn href={MailLink} icon={faEnvelope}>
-			Link to Mail
+			Link to {NAME}&apos;s Mail
 		</IconBtn>
 		<IconBtn href={LnLink} icon={faLinkedin}>
-			Link to LinkedIn
+			Link to {NAME}&apos;s LinkedIn
 		</IconBtn>
 		<IconBtn href={GHLink} icon={faGithub}>
-			Link to Github
+			Link to {NAME}&apos;s Github
 		</IconBtn>
 	</div>
 )

@@ -62,15 +62,11 @@ const Navbar = () => {
 }
 
 
-function Menu({close}){
+function Menu({closeMenu}){
     const ref = useRef(null);
 
-    useEffect(() => {
-        setTimeout(() => ref.current.classList.remove("close") )
-    })
-
     return (
-        <div className="menu fw close d-md-none" onClick={close} ref={ref}>
+        <div className="menu fw d-md-none" onClick={close} ref={ref}>
             <div className='fw pad'>
                 <div className="content fw d-flex flex-column gap-2">
                         {
@@ -82,7 +78,8 @@ function Menu({close}){
     )
 
     function close(){
-        once(transitionEnd, ref.current, closeMenu);
+        setTimeout(closeMenu, 100);
+        // once(transitionEnd, ref.current, closeMenu);
         ref.current.classList.add("close");
     }
 }
