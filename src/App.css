@@ -27,10 +27,19 @@ hr {
 p {
   font-size: 1rem;
   color: #bbbbbb;
+  margin: 0;
 }
 .pad {
   padding-left: 10px;
   padding-right: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+ol, ul {
+  padding: unset;
 }
 
 .box {
@@ -82,7 +91,7 @@ p {
 .my-services .service-card {
   background: #1a003e;
   border: 1px solid #7a00ff;
-  border-radius: 10px;
+  border-radius: 1.5em;
   padding: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease-in-out;
@@ -146,7 +155,7 @@ p {
 
 .my-recent-projects .project-card {
   background: #1a003e;
-  border-radius: .5em;
+  border-radius: 1.5rem;
   width: min(100%, 365px);
   transition: .2s;
   overflow: hidden;

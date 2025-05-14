@@ -6,13 +6,13 @@ const MyServices = () => {
             <Aesthetics />
 
 			<div className="pad fw d-flex flex-column mid-align gap-5">
-                <h3>My Services</h3>
+                <h1 className="fs-2 m-0">My Services</h1>
                 
-                <div className="services-grid fw">
+                <ol className="list-style-none services-grid fw">
                     {
                         services.map( (data, key) => <Service {...data} key={key} /> )
                     }
-                </div>
+                </ol>
             </div>
         </section>
     );
@@ -22,15 +22,15 @@ export default MyServices;
 
 
 const services = [
-    {title: "Website Design and Development", brief: <>
+    {title: "UI and SEO Optimization", brief: <>
         I build visually engaging and stunning websites
         tailored to your brand with incredible conversion rates. <br></br>
         From clean, intuitive designs to fast development periods 
-        expect out of the box responsiveness accross all devices.
+        expect out of the box responsiveness across all devices.
     </>, icon: "/icon1.png"},
     {title: "Web Application Development", brief: <>
         Deploy a scalable web application going from staging to production in record time. <br></br>
-        I develop and deploy secure Progressive Web app with offline support 
+        I develop and deploy secure Progressive Web Apps with offline support 
         and CI/CD pipelines for smooth, reliable release cycles.
     </>, icon: "/icon1.png"},
     {title: "AI integration and bot engineering", brief: <>
@@ -43,13 +43,13 @@ const services = [
 const Service = ({title, icon, brief}) => (
     
     
-    <div className="service-card">
+    <li className="service-card">
         <div className="max">
-            <h4>{title}</h4>
+            <h2 className="fs-4 m-0">{title}</h2>
             <p> <small>{brief}</small></p>
             <img src={icon} alt=""/>
         </div>
-    </div> 
+    </li> 
 )
 
 const Aesthetics = () => (

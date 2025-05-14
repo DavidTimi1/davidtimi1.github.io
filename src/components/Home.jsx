@@ -4,7 +4,7 @@ import"./Home.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, IconBtn } from "./Button";
 import { faAngleDoubleDown, faArrowUpRightFromSquare, faEllipsis, faEnvelope, faMailBulk } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin, faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { GHLink, MailLink, ROLE, XLink } from "../App";
 import { SkillImg } from "./Skills";
 import { useContext } from "react";
@@ -29,7 +29,7 @@ const Home = () => {
                         <h1 className="fs-2 m-0"> Heyy 👋 I'm 
                             <span className="brand"> David</span>, 
                         </h1>
-                        <h1 className="fs-2 m-0"> a <span className="brand"> FullStack Developer </span> </h1>
+                        <h1 className="fs-2 m-0"> a <span className="brand"> Full-stack Developer </span> </h1>
 
                         <p>
                             <span style={{textWrap: "wrap"}}> {ELEVATOR} </span>
