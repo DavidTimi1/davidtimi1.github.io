@@ -8,12 +8,14 @@ import portfolioImg from "../assets/portfolio.jpg";
 import cookingGIF from "../assets/cooking1.gif";
 import pic2plateImg from "../assets/pic2plate.webp";
 import ludoGameImg from "../assets/ludo-game.png";
-import message50Img from "../assets/message-50.jpg";
+import whatsappbotImg from "../assets/whatsapp_bot.jpg"
+import message50Img from "../assets/message-50_1.jpg";
 
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef } from "react";
 import useIntersectionObserver from "./ViewportObserver";
+import { ROLE } from "../App";
 
 
 const FeaturedProjects = () => {
@@ -22,14 +24,15 @@ const FeaturedProjects = () => {
 	return (
 		<section id="projects" className="my-recent-projects box fw">
 			<div className="pad fw d-flex flex-column mid-align gap-5">
-				<h3 className=" center-text">My Recent Projects</h3>
+				<h1 className="fs-2 m-0  center-text">My Recent Projects</h1>
+				<em className="sr-only"> as a {ROLE} </em>
 
-				<div className="d-flex mid-align flex-wrap even-space fw gap-4">
+				<ol className="list-style-none d-flex mid-align flex-wrap even-space fw gap-4 md-gap-5">
 					{ projects.map((item, key) => <Project key={key} {...item} /> )}
 
 					<Anticipate />
 					
-				</div>
+				</ol>
 			</div>
 		</section>
 	);
@@ -57,7 +60,7 @@ const projects = [
 			postgreSQL: "ci-postgresql"
 		},
 		descr: "End-to-end Encrypted Messaging Web Application. Quick, Secure and Seamless Messaging Platform!",
-		links: ["https://message50-frontend.vercel.app"]
+		links: ["https://message50-frontend.vercel.app", "https://github.com/DavidTimi1/Message_50"]
 	},
 	{
 		name: "Pic2Plate",
@@ -75,19 +78,32 @@ const projects = [
 		links: ["https://pic2plate-tau.vercel.app", "https://github.com/davidtimi1/pic2plate"]
 	},
 	{
-		name: "Ludo Multiplayer Game",
-		imgs: [ludoGameImg],
+		name: "Whatsapp Bot with Gemini and Chatgpt",
+		imgs: [whatsappbotImg],
 		featured: true,
 		tools: {
-			html: "ci-html",
-			css: "ci-css",
-			tailwind: "ci-tailwind",
-			javascript: "ci-js",
-			github: "ci-github",
+			python: "ci-python",
+			flask: {alt: "Flask"},
+			openai: {alt: "Chatgpt"},
+			gemini: {alt: "Gemini ✨"}		
 		},
-		descr: "Play the classical board game - Ludo with friends or against AI using this web-based implementation!",
-		links: ["https://davidtimi1.github.io/Ludo-Game", "https://github.com/DavidTimi1/Ludo-Game"]
+		descr: "AI Chatbot for Whatsapp with Image Gen and Speech Recognition capabilities built using Python Flask!",
+		links: ["https://api.whatsapp.com/send/?phone=2347012006545", "https://github.com/DavidTimi1/Whatsapp-Chatgpt-AI"]
 	},
+	// {
+	// 	name: "Ludo Multiplayer Game",
+	// 	imgs: [ludoGameImg],
+	// 	featured: true,
+	// 	tools: {
+	// 		html: "ci-html",
+	// 		css: "ci-css",
+	// 		tailwind: "ci-tailwind",
+	// 		javascript: "ci-js",
+	// 		github: "ci-github",
+	// 	},
+	// 	descr: "Play the classical board game - Ludo with friends or against AI using this web-based implementation!",
+	// 	links: ["https://davidtimi1.github.io/Ludo-Game", "https://github.com/DavidTimi1/Ludo-Game"]
+	// },
 	{
 		name: "Portfolio",
 		imgs: [portfolioImg],
@@ -136,7 +152,7 @@ const Project = ({name, descr, imgs, tools, links, featured }) => {
 
 
 	return (
-		<div className="project-card position-relative">
+		<li className="project-card position-relative">
 			<div className="fw d-flex flex-column">
 				<div className="fw img-box" style={{aspectRatio: "3/2"}}>
 					<img src={imgs[0]} className="max" />
@@ -161,16 +177,17 @@ const Project = ({name, descr, imgs, tools, links, featured }) => {
 				</div>
 				<div className="fw d-flex flex-column gap-2" style={{padding: "20px"}}>
 					<div>
-						<h4> {name} </h4>
-						<small>
+						<h2 className="fs-4"> {name} </h2>
+						<p className="fw-light m-0" style={{fontSize: "0.7rem"}}>
 							{descr}
-						</small>
+						</p>
 					</div>
-					<div className="d-flex gap-1 mid-align">
+					<div className="sr-only"> Tools {} used to build {name}:  </div>
+					<ul className="d-flex gap-1 mid-align">
 						{
 							Object.keys(tools).map( (skill, key) => <SkillImg key={key} name={skill} noTxt icon={ tools[skill] } size="lg" /> )
 						}
-					</div>
+					</ul>
 					<div className="d-flex gap-2">
 						{
 							links[0] &&
@@ -178,7 +195,7 @@ const Project = ({name, descr, imgs, tools, links, featured }) => {
 							<a className="no-link btn-primary" href={links[0]}  target="_blank" rel="noreferrer" >
 								<div className="max mid-align d-flex gap-2">
 									<FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-									<span> View Live </span>
+									<span> View <div className="sr-only"> {name} </div> Live </span>
 								</div>
 							</a>
 						</div>
@@ -190,7 +207,10 @@ const Project = ({name, descr, imgs, tools, links, featured }) => {
 							<a className="no-link btn-primary sec" href={links[1]}  target="_blank" rel="noreferrer" >
 								<div className="max mid-align d-flex gap-2">
 									<FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-									<span> Github </span>
+									<span> 
+										<span className="sr-only">Open source code for {name} on </span> 
+										Github 
+									</span>
 								</div>
 							</a>
 						</div>
@@ -199,7 +219,7 @@ const Project = ({name, descr, imgs, tools, links, featured }) => {
 				</div>
 
 			</div>
-		</div>
+		</li>
 	)
 	
 	function handleVisibilityChange(isVisible){
@@ -223,10 +243,11 @@ const Anticipate = () => (
 				<img src={cookingGIF} className="max" />
 			</div>
 			<div className="fw d-flex flex-column gap-2" style={{padding: "20px"}}>
-				<h4> Coming Very Soon ... 🔥🔥 </h4>
+				<h2 className="fs-4 m-0"> Coming Very Soon ... 🔥🔥 </h2>
 				<ul>
-					<li> Message50 (E2EE Chat App) </li>
-					<li> Ludo Multiplayer Game </li>
+					<li> HAAS 🏠 Website (House-as-a-Service) </li>
+					<li> AI Customer Support Agent </li>
+					<li> Accessibility Browser Eextension </li>
 				</ul>
 			</div>
 		</div>
